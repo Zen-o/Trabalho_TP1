@@ -43,10 +43,24 @@ public class Medico extends Pessoa {
 	}
 	public void RelatorioPaciente(Paciente paciente){
 		listaPaciente.add(paciente);
-		paciente.triagem.statusMedico();
+		System.out.printf("Nome do Paciente %s", paciente.getNome());
+		System.out.println("-----------Triagem---------------");
+		System.out.printf("Temperatura: %f\n", paciente.triagem.getTemperatura());
+		System.out.printf("Oxigenio: %f\n", paciente.triagem.getOxigenio());
+		System.out.printf("Gravidade: %d",paciente.triagem.getNivelGravidade());
+		System.out.println("Resultado do exame covid:");
+		paciente.laboratorio.Exame(paciente);
+		boolean exame = paciente.laboratorio.testeCovid;
+		System.out.println(exame);
+	}
+	public void TratamentoMedico() {
+		
 	}
 	@Override
 	public void HistoricoSistema() {
+		System.out.println("Area do Medico");
+		System.out.println("Pacientes Atendidos: ");
+		
 		
 	}
 	
