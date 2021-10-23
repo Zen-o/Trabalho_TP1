@@ -2,6 +2,7 @@ package principal;
 
 import java.util.Scanner;
 
+import entities.Medico;
 import entities.Paciente;
 import entities.Recepcionista;
 import entities.Triagem;
@@ -14,6 +15,7 @@ public class MainHospital {
 		Recepcionista recepcao = new Recepcionista();
 		Triagem triagemPaciente = new Triagem();
 		Paciente paciente = new Paciente();
+		Medico medico = new Medico();
 		float temperatura, pressao, oxigenio;
 		int opcao = 0;
 		Scanner sc = new Scanner(System.in);
@@ -33,6 +35,11 @@ public class MainHospital {
 			recepcao.setNome(nome);
 			email = "Maria_R@gmail.com";
 			recepcao.setEmail(email);
+			
+			nome = "Dra Rafaela Marques";
+			medico.setNome(nome);
+			email = "Maria_R@gmail.com";
+			medico.setEmail(email);
 			sc.nextLine();
 			
 			switch (opcao) {
@@ -122,6 +129,21 @@ public class MainHospital {
 					break;
 				}
 			
+				break;
+			case 3:
+				System.out.println("Area do Medico");
+				System.out.println("Area do Recepcionista");
+				System.out.println("\n                ======================================");
+				System.out.println("                  |     1 - Atender Paciente           |");
+				System.out.println("                  |     2 - Historico de Atividades    |");
+				System.out.println("                  |     0 - Sair                       |");
+				System.out.println("                  =====================================\n");
+				opcao = sc.nextInt();
+				sc.nextLine();
+				if(opcao == 1) {
+					System.out.printf("Apresentando triagem do Paciente: %s\n", paciente.getNome());
+				}
+				
 				break;
 			case 2:
 				System.out.println("Paciente: Acesse seu Historico");

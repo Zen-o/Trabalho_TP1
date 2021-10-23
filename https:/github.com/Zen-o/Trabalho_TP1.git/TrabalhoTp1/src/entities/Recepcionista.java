@@ -7,6 +7,7 @@ public class Recepcionista extends Pessoa{
 	private boolean laboratorio;
 	ArrayList<Paciente> listaPaciente = new ArrayList<Paciente>();
 	
+	
 
 	String nome,data,CadUnico;
 	Scanner sc = new Scanner(System.in);
