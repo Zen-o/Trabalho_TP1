@@ -142,6 +142,7 @@ public class MainHospital {
 				sc.nextLine();
 				if(opcao == 1) {
 					System.out.printf("Apresentando triagem do Paciente: %s\n", paciente.getNome());
+					System.out.printf("Apresentando Resultado do exame: %s\n");
 				}
 				
 				break;

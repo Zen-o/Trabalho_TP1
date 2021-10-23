@@ -4,6 +4,8 @@ package entities;
 public class Paciente extends Pessoa{
 	private String cadastroUnico;
 	public Triagem triagem = new Triagem();
+	public Laboratorio laboratorio = new Laboratorio();
+	public String exameResultado;
 
 
 	public String getCadastroUnico() {
@@ -38,8 +40,12 @@ public class Paciente extends Pessoa{
 		}else if(triagem.getNivelGravidade() == 4) {
 			System.out.println("Internação, Medico e Teste Covid");
 		}
+	
 
 		
 	}
+	
+
+	
 
 }
