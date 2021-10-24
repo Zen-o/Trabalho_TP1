@@ -16,7 +16,7 @@ public class Login extends javax.swing.JFrame {
      */
     public Login() {
         initComponents();
-        this.setExtendedState(MAXIMIZED_BOTH);
+        //this.setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**
@@ -30,33 +30,26 @@ public class Login extends javax.swing.JFrame {
 
         lblEmail = new javax.swing.JLabel();
         btnSenha = new javax.swing.JLabel();
-        FrmtdTxtSenha = new javax.swing.JFormattedTextField();
         jFmdTxtEmail = new javax.swing.JFormattedTextField();
         btnEntrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         CmbBoxFuncPac = new javax.swing.JComboBox<>();
-        Fundo = new javax.swing.JLabel();
+        fldSenha = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
-        setMinimumSize(new java.awt.Dimension(1280, 720));
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/icons/icon_window.png")).getImage());
+        setMinimumSize(new java.awt.Dimension(500, 500));
+        setType(java.awt.Window.Type.POPUP);
         getContentPane().setLayout(null);
 
         lblEmail.setText("E-mail");
         getContentPane().add(lblEmail);
-        lblEmail.setBounds(490, 300, 34, 14);
+        lblEmail.setBounds(60, 140, 34, 14);
 
         btnSenha.setText("Senha");
         getContentPane().add(btnSenha);
-        btnSenha.setBounds(490, 360, 34, 14);
-
-        FrmtdTxtSenha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FrmtdTxtSenhaActionPerformed(evt);
-            }
-        });
-        getContentPane().add(FrmtdTxtSenha);
-        FrmtdTxtSenha.setBounds(485, 375, 310, 30);
+        btnSenha.setBounds(60, 200, 34, 14);
 
         jFmdTxtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,7 +57,7 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jFmdTxtEmail);
-        jFmdTxtEmail.setBounds(485, 315, 310, 30);
+        jFmdTxtEmail.setBounds(60, 160, 310, 30);
 
         btnEntrar.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnEntrar.setText("Entrar");
@@ -74,27 +67,22 @@ public class Login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnEntrar);
-        btnEntrar.setBounds(540, 430, 200, 30);
+        btnEntrar.setBounds(120, 280, 200, 30);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Login");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(600, 200, 70, 40);
+        jLabel1.setBounds(70, 30, 70, 40);
 
-        CmbBoxFuncPac.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Funcionario", "Paciente" }));
+        CmbBoxFuncPac.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Triagem", "Médico", "Laboratório", "Paciente" }));
         getContentPane().add(CmbBoxFuncPac);
-        CmbBoxFuncPac.setBounds(560, 260, 160, 30);
-
-        Fundo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PicsAndBG/Login.png"))); // NOI18N
-        getContentPane().add(Fundo);
-        Fundo.setBounds(0, 0, 1280, 720);
+        CmbBoxFuncPac.setBounds(60, 100, 160, 30);
+        getContentPane().add(fldSenha);
+        fldSenha.setBounds(60, 220, 310, 30);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void FrmtdTxtSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FrmtdTxtSenhaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FrmtdTxtSenhaActionPerformed
 
     private void jFmdTxtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFmdTxtEmailActionPerformed
         // TODO add your handling code here:
@@ -141,10 +129,9 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CmbBoxFuncPac;
-    private javax.swing.JFormattedTextField FrmtdTxtSenha;
-    private javax.swing.JLabel Fundo;
     private javax.swing.JButton btnEntrar;
     private javax.swing.JLabel btnSenha;
+    private javax.swing.JPasswordField fldSenha;
     private javax.swing.JFormattedTextField jFmdTxtEmail;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblEmail;
