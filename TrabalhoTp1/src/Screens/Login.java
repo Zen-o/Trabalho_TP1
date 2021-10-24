@@ -35,6 +35,7 @@ public class Login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         CmbBoxFuncPac = new javax.swing.JComboBox<>();
         fldSenha = new javax.swing.JPasswordField();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Login");
@@ -80,6 +81,16 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(fldSenha);
         fldSenha.setBounds(60, 220, 310, 30);
 
+        jLabel2.setForeground(new java.awt.Color(0, 51, 255));
+        jLabel2.setText("Ainda não tem uma conta? Cadastre-se");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(120, 330, 200, 14);
+
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
@@ -91,6 +102,11 @@ public class Login extends javax.swing.JFrame {
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEntrarActionPerformed
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        // TODO add your handling code here:
+        new Cadastro().setVisible(true);
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -134,6 +150,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField fldSenha;
     private javax.swing.JFormattedTextField jFmdTxtEmail;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblEmail;
     // End of variables declaration//GEN-END:variables
 }
