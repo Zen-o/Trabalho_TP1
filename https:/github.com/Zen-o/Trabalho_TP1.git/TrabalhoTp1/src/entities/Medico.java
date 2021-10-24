@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Medico extends Pessoa {
 	private String crn;
-	public Paciente paciente = new Paciente();
+	public Pessoa paciente = new Paciente();
 	private String atestado, receita,diagnostico;
 	ArrayList<Paciente> listaPaciente = new ArrayList<Paciente>();
 

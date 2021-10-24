@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import entities.Medico;
 import entities.Paciente;
+import entities.Pessoa;
 import entities.Recepcionista;
 import entities.Triagem;
 
@@ -12,10 +13,10 @@ public class MainHospital {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub  
 		
-		Recepcionista recepcao = new Recepcionista();
+		Pessoa recepcao = new Recepcionista();
 		Triagem triagemPaciente = new Triagem();
-		Paciente paciente = new Paciente();
-		Medico medico = new Medico();
+		Pessoa paciente = new Paciente();
+		Pessoa medico = new Medico();
 		float temperatura, pressao, oxigenio;
 		int opcao = 0;
 		Scanner sc = new Scanner(System.in);
@@ -61,7 +62,7 @@ public class MainHospital {
 					paciente.setNome(nome);
 					System.out.println("Digite o Cadastro Unico");
 					CadUnico = sc.nextLine();
-					paciente.setCadastroUnico(CadUnico);
+					((Paciente) paciente).setCadastroUnico(CadUnico);
 					System.out.println("Digite a Data de nascimento: ");
 					data = sc.nextLine();
 					paciente.setDataNacimento(data);
@@ -77,7 +78,7 @@ public class MainHospital {
 					System.out.println("Digite a Data de Hoje: ");
 					data = sc.nextLine();
 					recepcao.setDataNacimento(data);
-					recepcao.CadastroPaciente(paciente);
+					((Recepcionista) recepcao).CadastroPaciente((Paciente) paciente);
 					System.out.println("Cadastro feito com sucesso! ");
 					System.out.println("Triagem do Paciente");
 					System.out.println("Informe a Temperatura: ");

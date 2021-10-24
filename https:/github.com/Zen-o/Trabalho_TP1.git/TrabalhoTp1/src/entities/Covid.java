@@ -15,7 +15,7 @@ public class Covid implements Enfermidade{
 	@Override
 	public void Tratamento() {
 		// TODO Auto-generated method stub
-		System.out.println("Para tratamento leve");
+		System.out.println("Para tratamento leve:");
 		System.out.println("Familiar doente deve ficar 10 dias de isolamento contados do início de sintomas"
 				+ "       E estar assintomático nas últimas 72 horas;");
 		System.out.println("Para tratamento Medio");

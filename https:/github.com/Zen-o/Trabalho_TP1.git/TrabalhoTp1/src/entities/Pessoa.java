@@ -4,6 +4,7 @@ public class Pessoa {
 	
 	private String nome, dataNacimento, email;
 	private String cpf, cep, telefone;
+	public Triagem triagem = new Triagem();
 	
 	public String getDataNacimento() {
 		return dataNacimento;
