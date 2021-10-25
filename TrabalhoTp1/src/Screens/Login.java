@@ -5,6 +5,8 @@
  */
 package Screens;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Bismarck
@@ -100,7 +102,27 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jFmdTxtEmailActionPerformed
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
-        // TODO add your handling code here:
+        // Verificando os Logins
+        if(jFmdTxtEmail.getText().equals("user_med") && fldSenha.getText().equals("12345Med")){
+            //Verificando login medico
+            new Medico().setVisible(true);
+        }
+        if(jFmdTxtEmail.getText().equals("user_tri") && fldSenha.getText().equals("12345Tri")){
+            //Verificando login triagem
+            new Triagem().setVisible(true);
+        }
+        if(jFmdTxtEmail.getText().equals("user_lab") && fldSenha.getText().equals("12345Lab")){
+            //Verificando login laboratorio
+            new Laboratorio().setVisible(true);
+        }
+        
+        if((jFmdTxtEmail.getText().equals("user_med") == false &&  fldSenha.getText().equals("12345Med") == false)
+           || (jFmdTxtEmail.getText().equals("user_tri") == false &&  fldSenha.getText().equals("12345Tri") == false) 
+           || (jFmdTxtEmail.getText().equals("user_lab") == false &&  fldSenha.getText().equals("12345lab") == false)){
+            JOptionPane.showMessageDialog(null, "Dados inválidos");
+            
+        }
+        
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
