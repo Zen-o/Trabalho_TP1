@@ -1,8 +1,27 @@
 package entities;
 
-public class Pessoa {
+abstract public class Pessoa {
 	
 	private String nome, dataNacimento, email;
+	private String cpf, cep, telefone;
+	public Triagem triagem = new Triagem();
+	
+	
+	
+	public Pessoa(String nome, String dataNacimento, String email, String cpf, String cep, String telefone) {
+		super();
+		this.nome = nome;
+		this.dataNacimento = dataNacimento;
+		this.email = email;
+		this.cpf = cpf;
+		this.cep = cep;
+		this.telefone = telefone;
+		this.triagem = triagem;
+	}
+	public Pessoa() {
+		
+	}
+	
 	
 	public String getDataNacimento() {
 		return dataNacimento;
@@ -10,25 +29,25 @@ public class Pessoa {
 	public void setDataNacimento(String dataNacimento) {
 		this.dataNacimento = dataNacimento;
 	}
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
-	public void setCpf(int cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	public int getCep() {
+	public String getCep() {
 		return cep;
 	}
-	public void setCep(int cep) {
+	public void setCep(String cep) {
 		this.cep = cep;
 	}
-	public int getTelefone() {
+	public String getTelefone() {
 		return telefone;
 	}
-	public void setTelefone(int telefone) {
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
-	private int cpf, cep, telefone;
+	
 	public String getEmail() {
 		return email;
 	}
@@ -41,5 +60,8 @@ public class Pessoa {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
+	public abstract void HistoricoSistema();
+	
 	
 }

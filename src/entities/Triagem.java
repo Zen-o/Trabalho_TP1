@@ -1,38 +1,81 @@
 package entities;
 
-import java.util.ArrayList;
+
 
 public class Triagem {
-    public int id;
-    //Paciente paciente = new Paciente(); Código Igor
-    
-    //Referencia ao objetopaciente associado
-    private ArrayList<Paciente> paciente;
-    
-    
-    public void criarPaciente() {
+	
+	private float temperatura, pressao, oxigenio;
+	public boolean paladar,oufato;
+	private int nivelGravidade;
+	
+	
+	
+	 
+	
+	public Triagem(float temperatura, float oxigenio) {
+		super();
+		this.temperatura = temperatura;
+		this.oxigenio = oxigenio;
+	}
+	
+
+	public Triagem() {
 		
-    }
+	}
 
-    public Triagem(int id) {
-        this.id = id;
-    }
+	public float getTemperatura() {
+		return temperatura;
+	}
 
-    public int getId() {
-        return id;
-    }
+	public void setTemperatura(float temperatura) {
+		this.temperatura = temperatura;
+	}
 
-    public void setId(int id) {
-        this.id = id;
-    }
+	public float getOxigenio() {
+		return oxigenio;
+	}
 
-    public ArrayList<Paciente> getPaciente() {
-        return paciente;
-    }
+	public void setOxigenio(float oxigenio) {
+		this.oxigenio = oxigenio;
+	}
 
-    public void setPaciente(ArrayList<Paciente> paciente) {
-        this.paciente = paciente;
-    }
-        
+	public int getNivelGravidade() {
+		return nivelGravidade;
+	}
+
+	public void setNivelGravidade(int nivelGravidade) {
+		this.nivelGravidade = nivelGravidade;
+	}
+
+	public float getPressao() {
+		return pressao;
+	}
+
+	public void setPressao(float pressao) {
+		this.pressao = pressao;
+	}
+	
+	public void statusMedico() {
+		if(temperatura >= 37.1 && temperatura <= 37.8  && oxigenio>= 91 && oxigenio <= 99 && oufato == false && paladar == false) {
+			nivelGravidade = 1;
+			
+			
+		}else if(temperatura >= 38.1 && temperatura <= 38.8   && oxigenio>= 91 && oxigenio <= 99 && oufato == false && paladar == true) {
+			nivelGravidade = 2;
+			
+		}else if(temperatura >= 38.9 && temperatura <= 39.5   && oxigenio >= 91 && oxigenio <= 99 && oufato == true && paladar == true) {
+			nivelGravidade = 3;
+			
+		}
+		else if(temperatura > 39.5 && oxigenio <= 90 && oufato == true && paladar == true) {
+			nivelGravidade = 4;
+			
+		}
+	}
+	
+	
+	
+
+	
 
 }
