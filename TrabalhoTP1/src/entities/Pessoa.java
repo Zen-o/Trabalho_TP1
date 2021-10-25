@@ -1,6 +1,6 @@
 package entities;
 
-public class Pessoa {
+abstract public class Pessoa {
 	
 	private String nome, dataNacimento, email;
 	private String cpf, cep, telefone;
@@ -9,8 +9,8 @@ public class Pessoa {
 	public String getDataNacimento() {
 		return dataNacimento;
 	}
-	public String setDataNacimento(String dataDacimento) {
-		return dataNacimento;
+	public void setDataNacimento(String dataNacimento) {
+		this.dataNacimento = dataNacimento;
 	}
 	public String getCpf() {
 		return cpf;
@@ -44,8 +44,7 @@ public class Pessoa {
 		this.nome = nome;
 	}
 	
-	public void HistoricoSistema() {
-		
-	}
+	public abstract void HistoricoSistema();
+	
 	
 }
