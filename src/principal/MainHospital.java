@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
+import entities.Laboratorio;
 import entities.Medico;
 import entities.Paciente;
 import entities.Pessoa;
@@ -20,6 +21,9 @@ public class MainHospital {
 		Pessoa paciente = new Paciente();
 		Pessoa medico = new Medico();
 		Triagem triagem = new Triagem();
+		Laboratorio laboratorio = new Laboratorio();
+		ArrayList<Pessoa> listaPaciente = new ArrayList<>();
+		boolean teste;
 		float temperatura, oxigenio;
 		int opcao = 0;
 		Locale.setDefault(Locale.US);
@@ -30,8 +34,8 @@ public class MainHospital {
 					.println("\n\n### ### ### ### ### Hpvate ### ### ### ### ###");
 			System.out.println("\n                ===============================");
 			System.out.println("                  |     1 - Funcionario         |");
-			System.out.println("                  |     2 - Paciente            |");
-			System.out.println("                  |     3 - Medico            |");			
+			System.out.println("                  |     2 - Medico              |");
+			System.out.println("                  |     3 - Paciente            |");			
 			System.out.println("                  |     0 - Sair                |");
 			System.out.println("                  ==============================\n");
 			
@@ -127,18 +131,35 @@ public class MainHospital {
 					if(flag == 1) {
 						System.out.println("Gravidade Minima: Paciente Assintomatico");
 						System.out.println("Paciente em isolamento em casa e monitoramento dos sintomas");
+						teste = laboratorio.Exame(flag);
+						((Paciente) paciente).setTesteCovid(teste);
+						((Paciente) paciente).AddPaciente(new Paciente(nome,data,email,cpf,cep,telefone,CadUnico,teste));
+						((Paciente) paciente).AddTriagem(temperatura,oxigenio);
+
 					}else if(flag == 2) {
 						System.out.println("Gravidade Minima: Paciente com Sintomas leves");
 						System.out.println("Paciente em isolamento em casa e monitoramento dos sintomas");
+						teste = laboratorio.Exame(flag);
+						((Paciente) paciente).setTesteCovid(teste);
+						((Paciente) paciente).AddPaciente(new Paciente(nome,data,email,cpf,cep,telefone,CadUnico,teste));
+						((Paciente) paciente).AddTriagem(temperatura,oxigenio);
 					}else if(flag == 3) {
 						System.out.println("Gravidade Intermediaria: Paciente com Alguns Sintomas");
 						System.out.println("Encaminhar para o Medico");
-						((Medico) medico).AddPaciente(new Paciente(nome,cpf,CadUnico));
+						teste = laboratorio.Exame(flag);
+						((Paciente) paciente).setTesteCovid(teste);
+						((Paciente) paciente).AddPaciente(new Paciente(nome,data,email,cpf,cep,telefone,CadUnico,teste));
+						((Paciente) paciente).AddTriagem(temperatura,oxigenio);
+						((Medico) medico).AddPaciente(new Paciente(nome,cpf,CadUnico,teste));
 						((Medico) medico).AddTriagem(temperatura,oxigenio);
 					}else {
 						System.out.println("Gravidade Elevada: Sintomas Graves");
 						System.out.println("Hospitalização Imediata e Acompanhamento Medico");
-						((Medico) medico).AddPaciente(new Paciente(nome,cpf,CadUnico));
+						teste = laboratorio.Exame(flag);
+						((Paciente) paciente).setTesteCovid(teste);
+						((Paciente) paciente).AddPaciente(new Paciente(nome,data,email,cpf,cep,telefone,CadUnico,teste));
+						((Paciente) paciente).AddTriagem(temperatura,oxigenio);
+						((Medico) medico).AddPaciente(new Paciente(nome,cpf,CadUnico,teste));
 						((Medico) medico).AddTriagem(temperatura,oxigenio);
 					}
 					
@@ -172,13 +193,7 @@ public class MainHospital {
 				System.out.println("                  =====================================\n");
 				opcao = sc.nextInt();
 				sc.nextLine();
-				
-				
-				opcao = sc.nextInt();
-				sc.nextLine();
-				
-				
-				
+
 				
 				switch (opcao) {
 				case 1:
@@ -198,7 +213,7 @@ public class MainHospital {
 					medico.HistoricoSistema();
 					break;
 					
-				case 3:
+				case 0:
 					
 					break;
 				}
@@ -206,6 +221,37 @@ public class MainHospital {
 				
 				break;
 			case 3:
+				System.out.println("Area do Paciente");
+				
+				System.out.println("\n                ======================================");
+				System.out.println("                  |     1 - Entrar no Sistema          |");
+				System.out.println("                  |     2 - Lista de Pacientes         |");
+				System.out.println("                  |     0 - Sair                       |");
+				System.out.println("                  =====================================\n");
+				opcao = sc.nextInt();
+				sc.nextLine();
+				switch (opcao) {
+				case 1:
+					System.out.println("Digite seu Nome: ");
+					
+					nome = sc.nextLine();
+					boolean encontro = ((Paciente) paciente).PesquisaNome(nome);
+					if(encontro == true) {
+						
+					}else {
+						System.out.println("Paciente não Encontrado");
+					}
+					break;
+					
+				case 2:
+					
+					paciente.HistoricoSistema();
+					break;
+					
+				case 0:
+					
+					break;
+				}
 				
 				
 				
