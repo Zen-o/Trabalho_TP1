@@ -18,8 +18,6 @@ public class MainHospital {
 		Pessoa recepcao = new Recepcionista();
 		Pessoa paciente = new Paciente();
 		Pessoa medico = new Medico();
-		Recepcionista recepcionista = new Recepcionista();
-		ArrayList<Pessoa> listPaciente = new ArrayList<>();
 		float temperatura, oxigenio;
 		int opcao = 0;
 		Locale.setDefault(Locale.US);
@@ -113,7 +111,7 @@ public class MainHospital {
 					else if(opcao == 2) {
 						paciente.triagem.paladar = false;
 					}
-					((Recepcionista) recepcao).Cadastro((Paciente) paciente);
+					((Recepcionista) recepcao).Cadastro(new Paciente(nome,data,email,cpf,cep,telefone,CadUnico));			
 					sc.nextLine();
 					
 					

@@ -6,6 +6,23 @@ abstract public class Pessoa {
 	private String cpf, cep, telefone;
 	public Triagem triagem = new Triagem();
 	
+	
+	
+	public Pessoa(String nome, String dataNacimento, String email, String cpf, String cep, String telefone) {
+		super();
+		this.nome = nome;
+		this.dataNacimento = dataNacimento;
+		this.email = email;
+		this.cpf = cpf;
+		this.cep = cep;
+		this.telefone = telefone;
+		this.triagem = triagem;
+	}
+	public Pessoa() {
+		
+	}
+	
+	
 	public String getDataNacimento() {
 		return dataNacimento;
 	}

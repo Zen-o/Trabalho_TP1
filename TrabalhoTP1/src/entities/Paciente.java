@@ -12,14 +12,27 @@ public class Paciente extends Pessoa{
 		return cadastroUnico;
 	}
 
+	
+
 	public Paciente(String cadastroUnico) {
 		super();
 		this.cadastroUnico = cadastroUnico;
 	}
-	
-	public Paciente() {
-
+	public Paciente(String nome, String data, String email, String cpf, String cep, String telefone, String cadastroUnico) {
+		setNome(nome);
+		setDataNacimento(data);
+		setEmail(email);
+		setCpf(cpf);
+		setCep(cep);
+		setTelefone(telefone);
+		setCadastroUnico(cadastroUnico);
+		
 	}
+	public Paciente() {
+		
+	}
+
+
 
 	public void setCadastroUnico(String cadastroUnico) {
 		this.cadastroUnico = cadastroUnico;
