@@ -301,6 +301,14 @@ public class Triagem extends javax.swing.JFrame {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
         // TODO add your handling code here:
+        String nome = txtName.getText();
+        String cpf = ftxtCPF.getText();
+        String dataNascimento = ftxtBirthDate.getText();
+        String telefone = ftxtTelefone.getText();
+        String email = ftxtEmail.getText();
+        String cep = ftxtCEP.getText();
+        String cadUnico = ftxtCadUnico.getText();
+        
     }//GEN-LAST:event_btnSaveActionPerformed
 
     /**
