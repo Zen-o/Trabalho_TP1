@@ -18,6 +18,20 @@ public class Recepcionista extends Pessoa{
 		listaPaciente.add(paciente);	
 	}
 	
+	public void PesquisaNome(String nome) {
+		
+		for(Pessoa list: listaPaciente) {
+				if(listaPaciente.get(cont).getNome().equals(nome)) {
+					cont = cont + 1;
+				}
+				
+			}
+		if(cont == 0) {
+			System.out.println("Paciente não encontrado no sistema");
+		}
+			
+		
+	}
 	
 	@Override
 	public void HistoricoSistema() {
@@ -25,7 +39,7 @@ public class Recepcionista extends Pessoa{
 		System.out.printf("Data de Registro %s\n", getDataNacimento());
 		System.out.println("============================================");
 		System.out.println("Pacientes Cadastrados");
-		/*
+		
 		for(Pessoa list: listaPaciente) {
 			System.out.println(cont);
 			System.out.printf("Nome do Paciente: %s\n",listaPaciente.get(cont).getNome());
@@ -35,20 +49,6 @@ public class Recepcionista extends Pessoa{
 			System.out.println(cont);
 			cont = cont + 1;
 		}
-		*/
-		
-		System.out.printf("Nome do Paciente: %s\n",listaPaciente.get(0).getNome());
-		System.out.printf("Telefone: %s\n",listaPaciente.get(0).getDataNacimento());
-		System.out.printf("CPF: %s\n",listaPaciente.get(0).getCpf());
-		System.out.printf("Cadastro Unico: %s\n",((Paciente) listaPaciente.get(0)).getCadastroUnico());
-		
-
-		System.out.printf("Nome do Paciente: %s\n",listaPaciente.get(1).getNome());
-		System.out.printf("Telefone: %s\n",listaPaciente.get(1).getDataNacimento());
-		System.out.printf("CPF: %s\n",listaPaciente.get(1).getCpf());
-		System.out.printf("Cadastro Unico: %s\n",((Paciente) listaPaciente.get(1)).getCadastroUnico());
-		
-		
 				
 	}
 	

@@ -52,6 +52,7 @@ public class MainHospital {
 				System.out.println("\n                ======================================");
 				System.out.println("                  |     1 - Cadastrar Paciente         |");
 				System.out.println("                  |     2 - Historico de Atividades    |");
+				System.out.println("                  |     3 - Pesquisar Paciente         |");
 				System.out.println("                  |     0 - Sair                       |");
 				System.out.println("                  =====================================\n");
 				opcao = sc.nextInt();
@@ -140,7 +141,14 @@ public class MainHospital {
 					
 					recepcao.HistoricoSistema();
 					break;
+					
+				case 3:
+					System.out.println("Digite o nome do paciente: ");
+					nome = sc.nextLine();
+					((Recepcionista) recepcao).PesquisaNome(nome);
+					break;
 				}
+				
 			
 				break;
 			case 3:
