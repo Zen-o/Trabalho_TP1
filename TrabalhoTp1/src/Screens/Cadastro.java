@@ -46,8 +46,8 @@ public class Cadastro extends javax.swing.JFrame {
         ftxtCEP = new javax.swing.JFormattedTextField();
         jLabel1 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        btnSalvar = new javax.swing.JToggleButton();
+        btnCancelar = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -124,9 +124,9 @@ public class Cadastro extends javax.swing.JFrame {
             }
         });
 
-        jToggleButton1.setText("jToggleButton1");
+        btnSalvar.setText("Salvar");
 
-        jToggleButton2.setText("jToggleButton2");
+        btnCancelar.setText("Cancelar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -176,9 +176,9 @@ public class Cadastro extends javax.swing.JFrame {
                 .addContainerGap(57, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSalvar, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -218,8 +218,8 @@ public class Cadastro extends javax.swing.JFrame {
                     .addComponent(ftxtCadUnico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton1)
-                    .addComponent(jToggleButton2))
+                    .addComponent(btnSalvar)
+                    .addComponent(btnCancelar))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
@@ -287,6 +287,8 @@ public class Cadastro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton btnCancelar;
+    private javax.swing.JToggleButton btnSalvar;
     private javax.swing.JFormattedTextField ftxtBirthDate;
     private javax.swing.JFormattedTextField ftxtCEP;
     private javax.swing.JFormattedTextField ftxtCPF;
@@ -302,8 +304,6 @@ public class Cadastro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JLabel lblCPF;
     private javax.swing.JLabel lblName;
     private javax.swing.JLabel lblSex;

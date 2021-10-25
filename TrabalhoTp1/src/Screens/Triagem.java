@@ -74,6 +74,11 @@ public class Triagem extends javax.swing.JFrame {
         setIconImage(new javax.swing.ImageIcon(getClass().getResource("/icons/icon_window.png")).getImage());
 
         btnNewPatient.setText("Novo Paciente");
+        btnNewPatient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNewPatientActionPerformed(evt);
+            }
+        });
 
         btnDelete.setText("Excluir");
 
@@ -113,6 +118,12 @@ public class Triagem extends javax.swing.JFrame {
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel7.setText("CadÚnico:");
+
+        txtName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNameActionPerformed(evt);
+            }
+        });
 
         lblSex.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblSex.setText("Sexo:");
@@ -259,6 +270,29 @@ public class Triagem extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnNewPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewPatientActionPerformed
+        // Habilitando novos botões
+        btnNewPatient.setEnabled(false);
+        btnCancel.setEnabled(true);
+        btnSave.setEnabled(true);
+        btnEdit.setEnabled(true);
+        btnDelete.setEnabled(true);
+        btnSearch.setEnabled(true);
+        
+        //Habilitando campos de texto
+        txtName.setEnabled(true);
+        ftxtCPF.setEnabled(true);
+        ftxtBirthDate.setEnabled(true);
+        ftxtTelefone.setEnabled(true);
+        ftxtEmail.setEnabled(true);
+        ftxtCEP.setEnabled(true);
+        ftxtCadUnico.setEnabled(true);
+    }//GEN-LAST:event_btnNewPatientActionPerformed
+
+    private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNameActionPerformed
 
     /**
      * @param args the command line arguments
