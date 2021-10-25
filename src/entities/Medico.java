@@ -27,6 +27,7 @@ public class Medico extends Pessoa {
 			if(listaPaciente.get(flag).triagem.getOxigenio()== 0) {
 				listaPaciente.get(flag).triagem.setOxigenio(oxigenio);
 			}
+		
 			
 			
 			flag = flag + 1;
@@ -43,6 +44,9 @@ public class Medico extends Pessoa {
 					System.out.printf("Nome do Paciente: %s\n",listaPaciente.get(flag).getNome());
 					System.out.printf("Temperatura Corporal: %.2f\n",listaPaciente.get(flag).triagem.getTemperatura());
 					System.out.printf("Nivel de Oxigenio: %.2f\n",listaPaciente.get(flag).triagem.getOxigenio());
+					System.out.printf("Resultado do teste:");
+					System.out.println(((Paciente) listaPaciente.get(flag)).isTesteCovid());
+
 					return true;
 					
 				}
@@ -54,18 +58,6 @@ public class Medico extends Pessoa {
 		
 	}
 	
-	public void RelatorioPaciente(Paciente paciente){
-		
-		System.out.printf("Nome do Paciente %s", paciente.getNome());
-		System.out.println("-----------Triagem---------------");
-		System.out.printf("Temperatura: %f\n", paciente.triagem.getTemperatura());
-		System.out.printf("Oxigenio: %f\n", paciente.triagem.getOxigenio());
-		System.out.printf("Gravidade: %d",paciente.triagem.getNivelGravidade());
-		System.out.println("Resultado do exame covid:");
-		paciente.laboratorio.Exame(paciente);
-		boolean exame = paciente.laboratorio.testeCovid;
-		System.out.println(exame);
-	}
 	public void TratamentoMedico() {
 		
 	}

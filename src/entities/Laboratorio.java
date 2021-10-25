@@ -3,35 +3,40 @@ package entities;
 import java.util.Random;
 
 public class Laboratorio {
-	public boolean testeCovid;
-	Random gerador = new Random();
 
+	Random gerador = new Random();
 	
 	
-	public void Exame(Paciente paciente) {
-		testeCovid = true;
+	
+	public boolean Exame(int flag) {
+
 		int num = gerador.nextInt(100);
 	
-		if(paciente.triagem.getNivelGravidade() == 1) {
+		if(flag == 1) {
 			
 			if(num >= 30) {
-				testeCovid = false;
-			}
+				return false;
+			}else
+				return true;
 		}
-		if(paciente.triagem.getNivelGravidade() == 2) {
+		if(flag == 2) {
 			if(num >= 40) {
-			testeCovid = false;
-			}
+				return false;
+			}else
+				return true;
 		}
-		if(paciente.triagem.getNivelGravidade() == 3) {
+		if(flag == 3) {
 			if(num >= 70) {
-			testeCovid = false;
-			}
+				return false;
+			}else
+				return true;
 		}
-		if(paciente.triagem.getNivelGravidade() == 4) {
-			if(num >=90) {
-			testeCovid = false;
-			}
+		if(flag == 4) {
+			if(num == 100) {
+				return false;
+			}else
+				return true;
 		}
+		return false;
 	}
 }
