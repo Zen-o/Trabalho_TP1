@@ -106,19 +106,22 @@ public class Login extends javax.swing.JFrame {
         if(jFmdTxtEmail.getText().equals("user_med") && fldSenha.getText().equals("12345Med")){
             //Verificando login medico
             new Medico().setVisible(true);
+            this.setVisible(false);
         }
         if(jFmdTxtEmail.getText().equals("user_tri") && fldSenha.getText().equals("12345Tri")){
             //Verificando login triagem
             new Triagem().setVisible(true);
+            this.setVisible(false);
         }
         if(jFmdTxtEmail.getText().equals("user_lab") && fldSenha.getText().equals("12345Lab")){
             //Verificando login laboratorio
             new Laboratorio().setVisible(true);
+            this.setVisible(false);
         }
         
         if((jFmdTxtEmail.getText().equals("user_med") == false &&  fldSenha.getText().equals("12345Med") == false)
-           || (jFmdTxtEmail.getText().equals("user_tri") == false &&  fldSenha.getText().equals("12345Tri") == false) 
-           || (jFmdTxtEmail.getText().equals("user_lab") == false &&  fldSenha.getText().equals("12345lab") == false)){
+           && (jFmdTxtEmail.getText().equals("user_tri") == false &&  fldSenha.getText().equals("12345Tri") == false) 
+           && (jFmdTxtEmail.getText().equals("user_lab") == false &&  fldSenha.getText().equals("12345lab") == false)){
             JOptionPane.showMessageDialog(null, "Dados inválidos");
             
         }
