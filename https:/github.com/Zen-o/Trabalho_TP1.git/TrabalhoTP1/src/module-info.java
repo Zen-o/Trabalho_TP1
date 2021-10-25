@@ -1,2 +1,2 @@
-module TrabalhoTP1 {
+module TrabalhoTP1{
 }
