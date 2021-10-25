@@ -35,7 +35,6 @@ public class Login extends javax.swing.JFrame {
         jFmdTxtEmail = new javax.swing.JFormattedTextField();
         btnEntrar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        CmbBoxFuncPac = new javax.swing.JComboBox<>();
         fldSenha = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
 
@@ -76,10 +75,6 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setText("Login");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(70, 30, 70, 40);
-
-        CmbBoxFuncPac.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione", "Triagem", "Médico", "Laboratório", "Paciente" }));
-        getContentPane().add(CmbBoxFuncPac);
-        CmbBoxFuncPac.setBounds(60, 100, 160, 30);
         getContentPane().add(fldSenha);
         fldSenha.setBounds(60, 220, 310, 30);
 
@@ -169,7 +164,6 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> CmbBoxFuncPac;
     private javax.swing.JButton btnEntrar;
     private javax.swing.JLabel btnSenha;
     private javax.swing.JPasswordField fldSenha;
