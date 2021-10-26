@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import entities.Dados;
 import entities.Paciente;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -32,7 +33,7 @@ public class Triagem extends javax.swing.JFrame {
         btnSearch.setEnabled(true);
         btnCancel.setEnabled(false);
         
-        //Habiliatar caixas de texto
+        //Desabilitar caixas de texto
         txtName.setEnabled(false);
         ftxtCPF.setEnabled(false);
         ftxtBirthDate.setEnabled(false);
@@ -41,7 +42,29 @@ public class Triagem extends javax.swing.JFrame {
         ftxtCEP.setEnabled(false);
         ftxtCadUnico.setEnabled(false);
     }
-
+    
+    //Carregar a tabela de Pacientes
+    public void CarregarTabelaPacientes(){
+        ArrayList<Paciente> pacientes = Dados.getListaPacientes();
+        DefaultTableModel modelo = new DefaultTableModel(new Object[] {"Nome","CPF","Data de Nascimento", "Telefone", "E-mail", "CEP", "CadUnico"},0 );
+        for (int i = 0; i < pacientes.size(); i++) {
+            Object line[] = new Object[]{pacientes.get(i).getNome(), 
+            pacientes.get(i).getCpf(), pacientes.get(i).getDataNacimento(),
+            pacientes.get(i).getTelefone(), pacientes.get(i).getEmail(),
+            pacientes.get(i).getCep(), pacientes.get(i).getCadastroUnico()};
+            
+            modelo.addRow(line);
+        }
+        tblDados.setModel(modelo);
+        tblDados.getColumnModel().getColumn(0).setPreferredWidth(100);
+        tblDados.getColumnModel().getColumn(1).setPreferredWidth(20);
+        tblDados.getColumnModel().getColumn(2).setPreferredWidth(20);
+        tblDados.getColumnModel().getColumn(3).setPreferredWidth(30);
+        tblDados.getColumnModel().getColumn(4).setPreferredWidth(100);
+        tblDados.getColumnModel().getColumn(5).setPreferredWidth(20);
+        tblDados.getColumnModel().getColumn(6).setPreferredWidth(20);
+    }
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -108,8 +131,25 @@ public class Triagem extends javax.swing.JFrame {
             new String [] {
                 "Nome", "CPF", "Data de Nascimento", "Telefone", "E-mail", "CEP", "CadUnico"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tblDados);
+        if (tblDados.getColumnModel().getColumnCount() > 0) {
+            tblDados.getColumnModel().getColumn(0).setPreferredWidth(100);
+            tblDados.getColumnModel().getColumn(1).setPreferredWidth(20);
+            tblDados.getColumnModel().getColumn(2).setPreferredWidth(20);
+            tblDados.getColumnModel().getColumn(3).setPreferredWidth(30);
+            tblDados.getColumnModel().getColumn(4).setPreferredWidth(100);
+            tblDados.getColumnModel().getColumn(5).setPreferredWidth(20);
+            tblDados.getColumnModel().getColumn(6).setPreferredWidth(20);
+        }
 
         btnSearch.setText("Pesquisar");
 
@@ -327,6 +367,9 @@ public class Triagem extends javax.swing.JFrame {
         
             JOptionPane.showMessageDialog(null,"Novo paciente adicionado!", "Novo paciente", JOptionPane.INFORMATION_MESSAGE);
         }
+        
+        //Carregar os Dados do paciente para a tabela
+        CarregarTabelaPacientes();
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed

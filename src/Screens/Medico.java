@@ -5,6 +5,11 @@
  */
 package Screens;
 
+import entities.Dados;
+import entities.Paciente;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 
 /**
  *
@@ -19,8 +24,22 @@ public class Medico extends javax.swing.JFrame {
        
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
+        CarregarTabelaPacientes();
    }
-    
+    public void CarregarTabelaPacientes(){
+        ArrayList<Paciente> pacientes = Dados.getListaPacientes();
+        DefaultTableModel modelo = new DefaultTableModel(new Object[] {"Nome","CPF","CadUnico"},0 );
+        for (int i = 0; i < pacientes.size(); i++) {
+            Object line[] = new Object[]{pacientes.get(i).getNome(), 
+            pacientes.get(i).getCpf(), pacientes.get(i).getCadastroUnico()};
+            
+            modelo.addRow(line);
+        }
+        tblDados.setModel(modelo);
+        tblDados.getColumnModel().getColumn(0).setPreferredWidth(100);
+        tblDados.getColumnModel().getColumn(1).setPreferredWidth(20);
+        tblDados.getColumnModel().getColumn(2).setPreferredWidth(20);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -35,7 +54,7 @@ public class Medico extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        tblDados = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -66,7 +85,7 @@ public class Medico extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Dados triagem"));
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        tblDados.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -74,7 +93,12 @@ public class Medico extends javax.swing.JFrame {
                 "Nome", "CPF", "CadUnico"
             }
         ));
-        jScrollPane1.setViewportView(jTable3);
+        jScrollPane1.setViewportView(tblDados);
+        if (tblDados.getColumnModel().getColumnCount() > 0) {
+            tblDados.getColumnModel().getColumn(0).setPreferredWidth(100);
+            tblDados.getColumnModel().getColumn(1).setPreferredWidth(20);
+            tblDados.getColumnModel().getColumn(2).setPreferredWidth(20);
+        }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -227,6 +251,6 @@ public class Medico extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable3;
+    private javax.swing.JTable tblDados;
     // End of variables declaration//GEN-END:variables
 }

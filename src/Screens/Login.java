@@ -5,6 +5,7 @@
  */
 package Screens;
 import entities.*;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -20,6 +21,8 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         //this.setExtendedState(MAXIMIZED_BOTH);
         Dados dados = new Dados();
+        ArrayList<Paciente> pacientes = Dados.getListaPacientes();
+        
     }
 
     /**
