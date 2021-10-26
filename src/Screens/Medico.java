@@ -28,6 +28,9 @@ public class Medico extends javax.swing.JFrame {
         this.setExtendedState(MAXIMIZED_BOTH);
 
         CarregarTabelaPacientes();
+        ArrayList<Paciente> pacientes = Dados.getListaPacientes();
+        if(pacientes.size() > 1){CarregarTabela(pacientes.get(pacientes.size()-1));}
+        else{CarregarTabela(pacientes.get(0));}
    }
     public void CarregarTabelaPacientes(){
         ArrayList<Paciente> pacientes = Dados.getListaPacientes();
@@ -48,12 +51,12 @@ public class Medico extends javax.swing.JFrame {
         //CarregarTabela(pacientes.get(-1));
    }
     public void CarregarTabela(Paciente paciente){
-        tblDadosPessoais.setValueAt(paciente.getNome(), 1, 1);
-        tblDadosPessoais.setValueAt(paciente.getDataNacimento(), 2, 1);
-        tblDadosPessoais.setValueAt(paciente.getCpf(), 3, 1);
-        tblDadosPessoais.setValueAt(paciente.getEmail(), 4, 1);
-        tblDadosPessoais.setValueAt(paciente.getTelefone(), 5, 1);
-        tblDadosPessoais.setValueAt(paciente.getCadastroUnico(), 6, 1);
+        tblDadosPessoais.setValueAt(paciente.getNome(), 0, 1);
+        tblDadosPessoais.setValueAt(paciente.getDataNacimento(), 1, 1);
+        tblDadosPessoais.setValueAt(paciente.getCpf(), 2, 1);
+        tblDadosPessoais.setValueAt(paciente.getEmail(), 3, 1);
+        tblDadosPessoais.setValueAt(paciente.getTelefone(), 4, 1);
+        tblDadosPessoais.setValueAt(paciente.getCadastroUnico(), 5, 1);
 
     }
     /**

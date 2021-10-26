@@ -132,7 +132,7 @@ public class Encaminhamento extends javax.swing.JFrame {
        
       String e = "";
         try {
-      FileWriter escritor = new FileWriter("Encaminhamento.txt");
+      FileWriter escritor = new FileWriter("impressao\encaminhamento.txt");
       e = e.concat(String.format("Encaminhamento:\n\n\n\n\n\n"));
       e = e.concat(String.format("Prezado(a) Dr(a).\n\n"));
       e = e.concat(String.format("Encaminho o paciente %s \n", paciente.getNome()));
@@ -145,10 +145,12 @@ public class Encaminhamento extends javax.swing.JFrame {
       e = e.concat(String.format("Nome do médico: %s\n",medico.getNome()));
       e = e.concat(String.format("CRN: %s\n",medico.getCrn()));
       e = e.concat(String.format("Telefone: %s\n",medico.getTelefone()));
+      escritor.write(e);
       escritor.close();        
         } catch (IOException ex) {
             Logger.getLogger(Medico.class.getName()).log(Level.SEVERE, null, ex);
         }
+    this.setVisible(false);    
     }//GEN-LAST:event_butImprimirActionPerformed
 
     private void butCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butCancelarActionPerformed

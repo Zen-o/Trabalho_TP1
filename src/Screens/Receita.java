@@ -132,7 +132,7 @@ public class Receita extends javax.swing.JFrame {
 
        String r = "";
         try {
-      FileWriter escritor = new FileWriter("receituario.txt");
+      FileWriter escritor = new FileWriter("impressao\receituario.txt");
       r = r.concat(String.format("Receituário:\n\n\n\n\n\n"));
       r = r.concat(String.format("Paciente: %s \n", paciente.getNome()));
       r = r.concat(String.format("Cpf: %s \n\n\n\n\n", paciente.getCpf()));
@@ -144,11 +144,12 @@ public class Receita extends javax.swing.JFrame {
       r = r.concat(String.format("Nome do médico: %s\n",medico.getNome()));
       r = r.concat(String.format("CRN: %s\n",medico.getCrn()));
       r = r.concat(String.format("Telefone: %s\n",medico.getTelefone()));
+      escritor.write(r);
       escritor.close();        
         } catch (IOException ex) {
             Logger.getLogger(Medico.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+    this.setVisible(false);    
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

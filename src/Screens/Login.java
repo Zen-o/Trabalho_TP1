@@ -22,8 +22,11 @@ public class Login extends javax.swing.JFrame {
         //this.setExtendedState(MAXIMIZED_BOTH);
         Dados dados = new Dados();
         ArrayList<Paciente> pacientes = Dados.getListaPacientes();
+        ArrayList<entities.Medico> medicos = Dados.getListaMedicos();
         Paciente paciente = new Paciente("Anakin Skywalker", "08/10/1999", "anakinlovespadme@mail.com", "060.222.345-90", "72132-89", "+55(61)987654325", "12343265891");
+        entities.Medico medico = new entities.Medico("Ben Kenobi","04/05/1985","ihavethehighground@mail.com","055.888.467-85","79564-89","+55(61)985642289","CRN-5/1255");
         Dados.adicionarPaciente(paciente);
+        Dados.adicionarMedico(medico);
     }
 
     /**

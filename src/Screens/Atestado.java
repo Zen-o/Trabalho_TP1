@@ -134,7 +134,7 @@ public class Atestado extends javax.swing.JFrame {
        
        String a = "";
         try {
-      FileWriter escritor = new FileWriter("atestado.txt");
+      FileWriter escritor = new FileWriter("impressao\atestado.txt");
   
       a = a.concat(String.format("Atestado médico\n\n\n\n\n\n"));
       a = a.concat(String.format("Atesto que o(a) Sr.(a) %s \n", paciente.getNome()));
@@ -153,7 +153,7 @@ public class Atestado extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(Medico.class.getName()).log(Level.SEVERE, null, ex);
         }
-        this.setVisible(false);
+      this.setVisible(false);
     }//GEN-LAST:event_butImprimirActionPerformed
 
     private void butCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butCancelarActionPerformed
