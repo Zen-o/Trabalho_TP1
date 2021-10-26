@@ -236,6 +236,11 @@ public class Triagem extends javax.swing.JFrame {
         });
 
         btnOk.setText("Ok");
+        btnOk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOkActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -584,8 +589,47 @@ public class Triagem extends javax.swing.JFrame {
             btnSearch.setEnabled(false);
             btnCancel.setEnabled(true);
             btnOk.setEnabled(true);
+            
+            ftxtCPF.setEnabled(true);
         }
     }//GEN-LAST:event_btnSearchActionPerformed
+
+    private void btnOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOkActionPerformed
+        // TODO add your handling code here:
+        if(ftxtCPF.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Informe o código", "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else{
+            Paciente paciente;
+            String cpf = ftxtCPF.getText();
+            String nomeSearch = "", cpfSearch = "", dataNascismentoSearch = "", telefoneSearch = "",
+                    emailSearch = "", cepSearch = "", cadUnicoSearch = "";
+            for (int i = 0; i < Dados.getListaPacientes().size(); i++) {
+                paciente = Dados.getListaPacientes().get(i);
+                
+                if(cpf.equals(paciente.getCpf())){
+                    nomeSearch = paciente.getNome();
+                    cpfSearch = paciente.getCpf();
+                    dataNascismentoSearch = paciente.getDataNacimento();
+                    telefoneSearch = paciente.getTelefone();
+                    emailSearch = paciente.getEmail();
+                    cepSearch = paciente.getCep();
+                    cadUnicoSearch = paciente.getCadastroUnico();
+                }
+                  
+            }
+            
+            txtName.setText(nomeSearch);
+            ftxtCPF.setText(cpf);
+            ftxtBirthDate.setText(dataNascismentoSearch);
+            ftxtTelefone.setText(telefoneSearch);
+            ftxtEmail.setText(emailSearch);
+            ftxtCEP.setText(cepSearch);
+            ftxtCadUnico.setText(cadUnicoSearch);
+           
+            
+        }
+    }//GEN-LAST:event_btnOkActionPerformed
 
     /**
      * @param args the command line arguments
