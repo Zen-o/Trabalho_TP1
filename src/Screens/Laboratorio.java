@@ -25,10 +25,10 @@ public class Laboratorio extends javax.swing.JFrame {
     public Laboratorio() {
         initComponents();
         ArrayList<Paciente> pacientes = Dados.getListaPacientes();
-        carregarTabela(pacientes.get(-1));
+        CarregarTabela(pacientes.get(-1));
     }
     
-    public void carregarTabela(Paciente paciente){
+    public void CarregarTabela(Paciente paciente){
         jTable1.setValueAt(paciente.getNome(), 1, 1);
         jTable1.setValueAt(paciente.getDataNacimento(), 2, 1);
         jTable1.setValueAt(paciente.getCpf(), 3, 1);
