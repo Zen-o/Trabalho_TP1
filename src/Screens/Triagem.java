@@ -8,6 +8,7 @@ package Screens;
 import java.util.ArrayList;
 import entities.Dados;
 import entities.Paciente;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -172,6 +173,11 @@ public class Triagem extends javax.swing.JFrame {
         }
 
         btnCancel.setText("Cancelar");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -306,6 +312,7 @@ public class Triagem extends javax.swing.JFrame {
     }//GEN-LAST:event_txtNameActionPerformed
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
+       // ArrayList<Paciente> pacientes = Dados.getListaPacientes();
         // TODO add your handling code here:
         String nome = txtName.getText();
         String cpf = ftxtCPF.getText();
@@ -314,11 +321,41 @@ public class Triagem extends javax.swing.JFrame {
         String email = ftxtEmail.getText();
         String cep = ftxtCEP.getText();
         String cadUnico = ftxtCadUnico.getText();
+         
+        Paciente paciente = new Paciente(nome, dataNascimento, email, cpf, cep, telefone, cadUnico);
+        Dados.adicionarPaciente(paciente);
         
-        
-        
-        paciente.getDataNacimento();
+        JOptionPane.showMessageDialog(null,"Novo paciente adicionado!", "Novo paciente", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnSaveActionPerformed
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        // TODO add your handling code here:
+        // Desabilitando botões
+        btnNewPatient.setEnabled(true);
+        btnEdit.setEnabled(false);
+        btnDelete.setEnabled(false);
+        btnSave.setEnabled(false);
+        btnSearch.setEnabled(true);
+        btnCancel.setEnabled(false);
+        
+        //Habiliatar caixas de texto
+        txtName.setEnabled(false);
+        ftxtCPF.setEnabled(false);
+        ftxtBirthDate.setEnabled(false);
+        ftxtTelefone.setEnabled(false);
+        ftxtEmail.setEnabled(false);
+        ftxtCEP.setEnabled(false);
+        ftxtCadUnico.setEnabled(false);
+        
+        //Setando os campos como string vazia
+        txtName.setText("");
+        ftxtCPF.setText("");
+        ftxtBirthDate.setText("");
+        ftxtTelefone.setText("");
+        ftxtEmail.setText("");
+        ftxtCEP.setText("");
+        ftxtCadUnico.setText("");
+    }//GEN-LAST:event_btnCancelActionPerformed
 
     /**
      * @param args the command line arguments
