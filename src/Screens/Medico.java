@@ -8,10 +8,9 @@ package Screens;
 import entities.Dados;
 import entities.Paciente;
 import java.util.ArrayList;
-<<<<<<< HEAD
+
 import javax.swing.table.DefaultTableModel;
-=======
->>>>>>> 3b19b588fd29e4f3f15260c8d16c77f00428b042
+
 
 
 /**
@@ -27,7 +26,7 @@ public class Medico extends javax.swing.JFrame {
        
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
-<<<<<<< HEAD
+
         CarregarTabelaPacientes();
    }
     public void CarregarTabelaPacientes(){
@@ -43,10 +42,10 @@ public class Medico extends javax.swing.JFrame {
         tblDados.getColumnModel().getColumn(0).setPreferredWidth(100);
         tblDados.getColumnModel().getColumn(1).setPreferredWidth(20);
         tblDados.getColumnModel().getColumn(2).setPreferredWidth(20);
-=======
+
         
-        ArrayList<Paciente> pacientes = Dados.getListaPacientes();
-        CarregarTabela(pacientes.get(-1));
+        //ArrayList<Paciente> pacientes = Dados.getListaPacientes();
+        //CarregarTabela(pacientes.get(-1));
    }
     public void CarregarTabela(Paciente paciente){
         jTable1.setValueAt(paciente.getNome(), 1, 1);
@@ -55,7 +54,7 @@ public class Medico extends javax.swing.JFrame {
         jTable1.setValueAt(paciente.getEmail(), 4, 1);
         jTable1.setValueAt(paciente.getTelefone(), 5, 1);
         jTable1.setValueAt(paciente.getCadastroUnico(), 6, 1);
->>>>>>> 3b19b588fd29e4f3f15260c8d16c77f00428b042
+
     }
     /**
      * This method is called from within the constructor to initialize the form.
