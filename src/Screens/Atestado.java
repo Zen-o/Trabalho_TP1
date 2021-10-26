@@ -134,7 +134,7 @@ public class Atestado extends javax.swing.JFrame {
        
        String a = "";
         try {
-      FileWriter escritor = new FileWriter("impressao\atestado.txt");
+      FileWriter escritor = new FileWriter("atestado.txt");
   
       a = a.concat(String.format("Atestado médico\n\n\n\n\n\n"));
       a = a.concat(String.format("Atesto que o(a) Sr.(a) %s \n", paciente.getNome()));

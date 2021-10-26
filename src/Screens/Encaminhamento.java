@@ -132,7 +132,7 @@ public class Encaminhamento extends javax.swing.JFrame {
        
       String e = "";
         try {
-      FileWriter escritor = new FileWriter("impressao\encaminhamento.txt");
+      FileWriter escritor = new FileWriter("encaminhamento.txt");
       e = e.concat(String.format("Encaminhamento:\n\n\n\n\n\n"));
       e = e.concat(String.format("Prezado(a) Dr(a).\n\n"));
       e = e.concat(String.format("Encaminho o paciente %s \n", paciente.getNome()));

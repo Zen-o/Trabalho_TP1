@@ -132,7 +132,7 @@ public class Receita extends javax.swing.JFrame {
 
        String r = "";
         try {
-      FileWriter escritor = new FileWriter("impressao\receituario.txt");
+      FileWriter escritor = new FileWriter("receituario.txt");
       r = r.concat(String.format("Receituário:\n\n\n\n\n\n"));
       r = r.concat(String.format("Paciente: %s \n", paciente.getNome()));
       r = r.concat(String.format("Cpf: %s \n\n\n\n\n", paciente.getCpf()));
