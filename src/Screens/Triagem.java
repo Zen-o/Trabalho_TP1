@@ -337,6 +337,15 @@ public class Triagem extends javax.swing.JFrame {
         ftxtEmail.setEnabled(true);
         ftxtCEP.setEnabled(true);
         ftxtCadUnico.setEnabled(true);
+        
+        //Setando os campos como string vazia
+        txtName.setText("");
+        ftxtCPF.setText("");
+        ftxtBirthDate.setText("");
+        ftxtTelefone.setText("");
+        ftxtEmail.setText("");
+        ftxtCEP.setText("");
+        ftxtCadUnico.setText("");
     }//GEN-LAST:event_btnNewPatientActionPerformed
 
     private void txtNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNameActionPerformed
@@ -361,13 +370,32 @@ public class Triagem extends javax.swing.JFrame {
              ftxtCEP.getText().equals("") ||
              ftxtCadUnico.getText().equals("")){
             JOptionPane.showMessageDialog(null,"Preencha todos os campos!", "Aviso!", JOptionPane.PLAIN_MESSAGE);
+            
         }
         else{ 
             Paciente paciente = new Paciente(nome, dataNascimento, email, cpf, cep, telefone, cadUnico);
             Dados.adicionarPaciente(paciente);
         
             JOptionPane.showMessageDialog(null,"Novo paciente adicionado!", "Novo paciente", JOptionPane.INFORMATION_MESSAGE);
-        }
+            
+            // Desabilitando botões
+            btnNewPatient.setEnabled(true);
+            btnEdit.setEnabled(false);
+            btnDelete.setEnabled(false);
+            btnSave.setEnabled(false);
+            btnSearch.setEnabled(true);
+            btnCancel.setEnabled(false);
+        
+            //Desabiliatar caixas de texto
+            txtName.setEnabled(false);
+            ftxtCPF.setEnabled(false);
+            ftxtBirthDate.setEnabled(false);
+            ftxtTelefone.setEnabled(false);
+            ftxtEmail.setEnabled(false);
+            ftxtCEP.setEnabled(false);
+            ftxtCadUnico.setEnabled(false);
+        }       
+
         
         //Carregar os Dados do paciente para a tabela
         CarregarTabelaPacientes();

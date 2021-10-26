@@ -22,7 +22,7 @@ public class Login extends javax.swing.JFrame {
         //this.setExtendedState(MAXIMIZED_BOTH);
         Dados dados = new Dados();
         ArrayList<Paciente> pacientes = Dados.getListaPacientes();
-        Paciente paciente = new Paciente("Anakin Skywalker", "08101999", "anakinlovespadme@mail.com", "06022234590", "7213289", "5561987654325", "12343265891");
+        Paciente paciente = new Paciente("Anakin Skywalker", "08/10/1999", "anakinlovespadme@mail.com", "060.222.345-90", "72132-89", "+55(61)987654325", "12343265891");
         Dados.adicionarPaciente(paciente);
     }
 
@@ -119,9 +119,9 @@ public class Login extends javax.swing.JFrame {
             this.setVisible(false);
         }
         
-        if((jFmdTxtEmail.getText().equals("user_med") == false &&  fldSenha.getText().equals("12345Med") == false)
-           && (jFmdTxtEmail.getText().equals("user_tri") == false &&  fldSenha.getText().equals("12345Tri") == false) 
-           && (jFmdTxtEmail.getText().equals("user_lab") == false &&  fldSenha.getText().equals("12345lab") == false)){
+        if((jFmdTxtEmail.getText().equals("med@uol.br") == false &&  fldSenha.getText().equals("med") == false)
+           && (jFmdTxtEmail.getText().equals("tri@uol.br") == false &&  fldSenha.getText().equals("tri") == false) 
+           && (jFmdTxtEmail.getText().equals("lab@uol.br") == false &&  fldSenha.getText().equals("lab") == false)){
             JOptionPane.showMessageDialog(null, "Dados inválidos");
             
         }
