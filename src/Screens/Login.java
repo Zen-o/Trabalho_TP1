@@ -22,7 +22,7 @@ public class Login extends javax.swing.JFrame {
         //this.setExtendedState(MAXIMIZED_BOTH);
         Dados dados = new Dados();
         ArrayList<Paciente> pacientes = Dados.getListaPacientes();
-        Paciente paciente = new Paciente("Anakin Skywalker", "08101999", "anakinlovespadme@mail.com", "06022234590", "7213289", "5561987654325", "12343265891");
+        Paciente paciente = new Paciente("Anakin Skywalker", "08/10/1999", "anakinlovespadme@mail.com", "060.222.345-90", "72132-89", "+55(61)987654325", "12343265891");
         Dados.adicionarPaciente(paciente);
     }
 
@@ -103,25 +103,25 @@ public class Login extends javax.swing.JFrame {
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
         // Verificando os Logins
-        if(jFmdTxtEmail.getText().equals("user_med") && fldSenha.getText().equals("12345Med")){
+        if(jFmdTxtEmail.getText().equals("med@uol.br") && fldSenha.getText().equals("med")){
             //Verificando login medico
             new Medico().setVisible(true);
             this.setVisible(false);
         }
-        if(jFmdTxtEmail.getText().equals("user_tri") && fldSenha.getText().equals("12345Tri")){
+        if(jFmdTxtEmail.getText().equals("tri@uol.br") && fldSenha.getText().equals("tri")){
             //Verificando login triagem
             new Triagem().setVisible(true);
             this.setVisible(false);
         }
-        if(jFmdTxtEmail.getText().equals("user_lab") && fldSenha.getText().equals("12345Lab")){
+        if(jFmdTxtEmail.getText().equals("lab@uol.br") && fldSenha.getText().equals("lab")){
             //Verificando login laboratorio
             new Laboratorio().setVisible(true);
             this.setVisible(false);
         }
         
-        if((jFmdTxtEmail.getText().equals("user_med") == false &&  fldSenha.getText().equals("12345Med") == false)
-           && (jFmdTxtEmail.getText().equals("user_tri") == false &&  fldSenha.getText().equals("12345Tri") == false) 
-           && (jFmdTxtEmail.getText().equals("user_lab") == false &&  fldSenha.getText().equals("12345lab") == false)){
+        if((jFmdTxtEmail.getText().equals("med@uol.br") == false &&  fldSenha.getText().equals("med") == false)
+           && (jFmdTxtEmail.getText().equals("tri@uol.br") == false &&  fldSenha.getText().equals("tri") == false) 
+           && (jFmdTxtEmail.getText().equals("lab@uol.br") == false &&  fldSenha.getText().equals("lab") == false)){
             JOptionPane.showMessageDialog(null, "Dados inválidos");
             
         }
