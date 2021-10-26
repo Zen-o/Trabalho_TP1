@@ -1,7 +1,7 @@
 package entities;
 
 import java.util.ArrayList;
-
+//Olá
 public class Medico extends Pessoa {
 	private String crn;
 	ArrayList<Pessoa> listaPaciente = new ArrayList<>();

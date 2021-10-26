@@ -304,7 +304,7 @@ public class Triagem extends javax.swing.JFrame {
 
     private void btnSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveActionPerformed
        // ArrayList<Paciente> pacientes = Dados.getListaPacientes();
-        // TODO add your handling code here:
+        // TODO add your handling code here:        
         String nome = txtName.getText();
         String cpf = ftxtCPF.getText();
         String dataNascimento = ftxtBirthDate.getText();
@@ -312,11 +312,21 @@ public class Triagem extends javax.swing.JFrame {
         String email = ftxtEmail.getText();
         String cep = ftxtCEP.getText();
         String cadUnico = ftxtCadUnico.getText();
-         
-        Paciente paciente = new Paciente(nome, dataNascimento, email, cpf, cep, telefone, cadUnico);
-        Dados.adicionarPaciente(paciente);
+        if (txtName.getText().equals("") ||
+             ftxtCPF.getText().equals("") ||
+             ftxtBirthDate.getText().equals("")||
+             ftxtTelefone.getText().equals("") ||
+             ftxtEmail.getText().equals("") ||
+             ftxtCEP.getText().equals("") ||
+             ftxtCadUnico.getText().equals("")){
+            JOptionPane.showMessageDialog(null,"Preencha todos os campos!", "Aviso!", JOptionPane.PLAIN_MESSAGE);
+        }
+        else{ 
+            Paciente paciente = new Paciente(nome, dataNascimento, email, cpf, cep, telefone, cadUnico);
+            Dados.adicionarPaciente(paciente);
         
-        JOptionPane.showMessageDialog(null,"Novo paciente adicionado!", "Novo paciente", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Novo paciente adicionado!", "Novo paciente", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_btnSaveActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
