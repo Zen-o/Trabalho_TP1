@@ -16,7 +16,7 @@ import javax.swing.table.DefaultTableModel;
  * @author Bismarck
  */
 public class Triagem extends javax.swing.JFrame {
-
+    String botao;
     /**
      * Creates new form Triagem
      */
@@ -139,6 +139,11 @@ public class Triagem extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        tblDados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblDadosMouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(tblDados);
@@ -321,6 +326,7 @@ public class Triagem extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNewPatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewPatientActionPerformed
+        botao = "novo";
         // Habilitando novos botões
         btnNewPatient.setEnabled(false);
         btnCancel.setEnabled(true);
@@ -362,6 +368,7 @@ public class Triagem extends javax.swing.JFrame {
         String email = ftxtEmail.getText();
         String cep = ftxtCEP.getText();
         String cadUnico = ftxtCadUnico.getText();
+        
         if (txtName.getText().equals("") ||
              ftxtCPF.getText().equals("") ||
              ftxtBirthDate.getText().equals("")||
@@ -373,11 +380,25 @@ public class Triagem extends javax.swing.JFrame {
             
         }
         else{ 
-            Paciente paciente = new Paciente(nome, dataNascimento, email, cpf, cep, telefone, cadUnico);
-            Dados.adicionarPaciente(paciente);
-        
-            JOptionPane.showMessageDialog(null,"Novo paciente adicionado!", "Novo paciente", JOptionPane.INFORMATION_MESSAGE);
-            
+            //Salvar
+            if(botao.equals("novo")){
+                Paciente paciente = new Paciente(nome, dataNascimento, email, cpf, cep, telefone, cadUnico);
+                Dados.adicionarPaciente(paciente);
+                JOptionPane.showMessageDialog(null,"Novo paciente adicionado!", "Novo paciente", JOptionPane.INFORMATION_MESSAGE);
+            }
+            //Editar
+            else if(botao.equals("editar")){
+                int indice = tblDados.getSelectedRow();
+                
+                Dados.getListaPacientes().get(indice).setNome(nome);
+                Dados.getListaPacientes().get(indice).setCpf(cpf);
+                Dados.getListaPacientes().get(indice).setDataNacimento(dataNascimento);
+                Dados.getListaPacientes().get(indice).setTelefone(telefone);
+                Dados.getListaPacientes().get(indice).setEmail(email);
+                Dados.getListaPacientes().get(indice).setCep(cep);
+                Dados.getListaPacientes().get(indice).setCadastroUnico(cadUnico);
+                
+            }
             // Desabilitando botões
             btnNewPatient.setEnabled(true);
             btnEdit.setEnabled(false);
@@ -431,8 +452,58 @@ public class Triagem extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditActionPerformed
-        // TODO add your handling code here:
+        botao = "editar";
+        // Desabilitando botões
+        btnNewPatient.setEnabled(false);
+        btnEdit.setEnabled(false);
+        btnDelete.setEnabled(false);
+        btnSave.setEnabled(true);
+        btnSearch.setEnabled(false);
+        btnCancel.setEnabled(true);
+        
+        //Desabilitar caixas de texto
+        txtName.setEnabled(true);
+        ftxtCPF.setEnabled(true);
+        ftxtBirthDate.setEnabled(true);
+        ftxtTelefone.setEnabled(true);
+        ftxtEmail.setEnabled(true);
+        ftxtCEP.setEnabled(true);
+        ftxtCadUnico.setEnabled(true);
     }//GEN-LAST:event_btnEditActionPerformed
+
+    private void tblDadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDadosMouseClicked
+        // TODO add your handling code here:
+        int i = tblDados.getSelectedRow();
+        //JOptionPane.showMessageDialog(null,"Clicou na Tabela", "Tetse", JOptionPane.INFORMATION_MESSAGE);
+        if(i <= Dados.getListaPacientes().size()){
+            //JOptionPane.showMessageDialog(null,"Entrou no if", "Tetse", JOptionPane.INFORMATION_MESSAGE);
+            Paciente patient = Dados.getListaPacientes().get(i);
+            txtName.setText(String.valueOf(patient.getNome()));
+            ftxtCPF.setText(String.valueOf(patient.getCpf()));
+            ftxtBirthDate.setText(String.valueOf(patient.getDataNacimento()));
+            ftxtTelefone.setText(String.valueOf(patient.getTelefone()));
+            ftxtEmail.setText(String.valueOf(patient.getEmail()));
+            ftxtCEP.setText(String.valueOf(patient.getCep()));
+            ftxtCadUnico.setText(String.valueOf(patient.getCadastroUnico()));
+            
+            // Desabilitando botões
+            btnNewPatient.setEnabled(true);
+            btnEdit.setEnabled(true);
+            btnDelete.setEnabled(true);
+            btnSave.setEnabled(false);
+            btnSearch.setEnabled(true);
+            btnCancel.setEnabled(false);
+        
+            //Desabilitar caixas de texto
+            txtName.setEnabled(false);
+            ftxtCPF.setEnabled(false);
+            ftxtBirthDate.setEnabled(false);
+            ftxtTelefone.setEnabled(false);
+            ftxtEmail.setEnabled(false);
+            ftxtCEP.setEnabled(false);
+            ftxtCadUnico.setEnabled(false);
+        }
+    }//GEN-LAST:event_tblDadosMouseClicked
 
     /**
      * @param args the command line arguments
