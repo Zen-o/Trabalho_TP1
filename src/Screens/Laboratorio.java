@@ -121,6 +121,11 @@ public class Laboratorio extends javax.swing.JFrame {
         );
 
         ButImprimir.setText("Imprimir");
+        ButImprimir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButImprimirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -156,6 +161,19 @@ public class Laboratorio extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ButImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButImprimirActionPerformed
+        // TODO add your handling code here:
+        FileWriter escritor;
+        try {
+        escritor = new FileWriter("resultadoLaboratorio.txt");
+        escritor.write(jTextArea1.getText());
+        escritor.close();
+        } catch (IOException ex) {
+            Logger.getLogger(Laboratorio.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }//GEN-LAST:event_ButImprimirActionPerformed
 
     /**
      * @param args the command line arguments

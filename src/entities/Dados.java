@@ -17,6 +17,8 @@ public class Dados {
     private static ArrayList<Medico> listaMedicos;
 
     public static ArrayList<Paciente> getListaPacientes() {
+        if (listaPacientes == null)
+            listaPacientes = new ArrayList<Paciente>();
         return listaPacientes;
     }
 
@@ -24,7 +26,9 @@ public class Dados {
         Dados.listaPacientes.add(paciente);
     }
 
-    public static ArrayList<Recepcionista> getListaRecepcionistas() { 
+    public static ArrayList<Recepcionista> getListaRecepcionistas() {
+        if (listaRecepcionistas == null)
+            listaRecepcionistas = new ArrayList<Recepcionista>();
         return listaRecepcionistas;
     }
 
@@ -33,6 +37,8 @@ public class Dados {
     }
 
     public static ArrayList<Medico> getListaMedicos() {
+        if (listaMedicos == null)
+            listaMedicos = new ArrayList<Medico>();
         return listaMedicos;
     }
 

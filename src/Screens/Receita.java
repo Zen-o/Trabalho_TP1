@@ -5,8 +5,11 @@
  */
 package Screens;
 
+import entities.Dados;
+import entities.Paciente;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -118,13 +121,17 @@ public class Receita extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-    entities.Medico medico = new entities.Medico(); 
+    ArrayList<Paciente> pacientes = Dados.getListaPacientes();
+    ArrayList<entities.Medico> medicos = Dados.getListaMedicos();
+    entities.Medico medico = medicos.get(-1);
+    Paciente paciente = pacientes.get(-1);
+
        String r = "";
         try {
       FileWriter escritor = new FileWriter("receituario.txt");
       r = r.concat(String.format("Receituário:\n\n\n\n\n\n"));
-      r = r.concat(String.format("Paciente: %s \n", medico.getListaPaciente().get(-1).getNome()));
-      r = r.concat(String.format("Cpf: %s \n\n\n\n\n", medico.getListaPaciente().get(-1).getCpf()));
+      r = r.concat(String.format("Paciente: %s \n", paciente.getNome()));
+      r = r.concat(String.format("Cpf: %s \n\n\n\n\n", paciente.getCpf()));
       r = r.concat(String.format("Prescrição:\n"));
       r = r.concat(String.format("%s\n\n\n\n\n\n",jTextArea1.getText()));
       r = r.concat(String.format("Observações:\n"));

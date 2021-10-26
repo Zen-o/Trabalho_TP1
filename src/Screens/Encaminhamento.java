@@ -4,9 +4,12 @@
  * and open the template in the editor.
  */
 package Screens;
+import entities.*;
+
 
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -118,15 +121,18 @@ public class Encaminhamento extends javax.swing.JFrame {
 
     private void butImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butImprimirActionPerformed
         // TODO add your handling code here:
-            entities.Medico medico = new entities.Medico();
+        ArrayList<Paciente> pacientes = Dados.getListaPacientes();
+        ArrayList<entities.Medico> medicos = Dados.getListaMedicos();
+            entities.Medico medico = medicos.get(-1);
+            Paciente paciente = pacientes.get(-1);
        
       String e = "";
         try {
       FileWriter escritor = new FileWriter("Encaminhamento.txt");
       e = e.concat(String.format("Encaminhamento:\n\n\n\n\n\n"));
       e = e.concat(String.format("Prezado(a) Dr(a).\n\n"));
-      e = e.concat(String.format("Encaminho o paciente %s \n", medico.getListaPaciente().get(-1).getNome()));
-      e = e.concat(String.format("Portador do Cpf: %s \n\n\n\n\n", medico.getListaPaciente().get(-1).getCpf()));
+      e = e.concat(String.format("Encaminho o paciente %s \n", paciente.getNome()));
+      e = e.concat(String.format("Portador do Cpf: %s \n\n\n\n\n", paciente.getCpf()));
       e = e.concat(String.format("para:\n"));
       e = e.concat(String.format("%s\n\n\n\n\n\n",jTextArea1.getText()));
       e = e.concat(String.format("Observações:\n"));

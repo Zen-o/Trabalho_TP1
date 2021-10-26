@@ -5,8 +5,11 @@
  */
 package Screens;
 
+import entities.Dados;
+import entities.Paciente;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -117,26 +120,26 @@ public class Atestado extends javax.swing.JFrame {
 
     private void butImprimirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butImprimirActionPerformed
         // TODO add your handling code here:
-        
-        entities.Medico medico = new entities.Medico();
+    ArrayList<Paciente> pacientes = Dados.getListaPacientes();
+    ArrayList<entities.Medico> medicos = Dados.getListaMedicos();
+    entities.Medico medico = medicos.get(-1);
+    Paciente paciente = pacientes.get(-1);
        
        String a = "";
         try {
       FileWriter escritor = new FileWriter("atestado.txt");
   
       a = a.concat(String.format("Atestado médico\n\n\n\n\n\n"));
-      //a = a.concat(String.format("Atesto que o(a) Sr.(a) %s \n", medico.getListaPaciente().get(-1).getNome()));
-      a = a.concat(String.format("Atesto que o(a) Sr.(a) %s \n", "ronaldo"));
+      a = a.concat(String.format("Atesto que o(a) Sr.(a) %s \n", paciente.getNome()));
+
       a = a.concat(String.format("encontra-se sob meus cuidados profissionais necessitando de afastamento\n"));
       a = a.concat(String.format("de suas atividades pelo período de %s dias \n\n\n\n\n", jTextField1.getText()));
       a = a.concat(String.format("Observações:\n\n%s\n\n\n\n\n\n\n\n",jTextArea1.getText()));
       a = a.concat(String.format("Brásilia-DF\n\n"));
-      //a = a.concat(String.format("Nome do médico: %s\n",medico.getNome()));
-      //a = a.concat(String.format("CRN: %s\n",medico.getCrn()));
-      //a = a.concat(String.format("Telefone: %s\n",medico.getTelefone()));
-      a = a.concat(String.format("Nome do médico: %s\n",""));
-      a = a.concat(String.format("CRN: %s\n",""));
-      a = a.concat(String.format("Telefone: %s\n",""));
+      a = a.concat(String.format("Nome do médico: %s\n",medico.getNome()));
+      a = a.concat(String.format("CRN: %s\n",medico.getCrn()));
+      a = a.concat(String.format("Telefone: %s\n",medico.getTelefone()));
+
       escritor.write(a);
       escritor.close(); 
       
