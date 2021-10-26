@@ -563,23 +563,28 @@ public class Triagem extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        //Setando os campos como string vazia
-        txtName.setText("");
-        ftxtCPF.setText("");
-        ftxtBirthDate.setText("");
-        ftxtTelefone.setText("");
-        ftxtEmail.setText("");
-        ftxtCEP.setText("");
-        ftxtCadUnico.setText("");
-        //Desabilitando botões
-        btnNewPatient.setEnabled(false);
-        btnEdit.setEnabled(false);
-        btnDelete.setEnabled(false);
-        btnSave.setEnabled(false);
-        btnSearch.setEnabled(false);
-        btnCancel.setEnabled(true);
-        btnOk.setEnabled(true);
         
+        if(Dados.getListaPacientes().isEmpty()){
+            JOptionPane.showMessageDialog(null,"Nenum paciente Cadastrado", "Erro!", JOptionPane.PLAIN_MESSAGE);
+        }
+        else{
+            //Setando os campos como string vazia
+            txtName.setText("");
+            ftxtCPF.setText("");
+            ftxtBirthDate.setText("");
+            ftxtTelefone.setText("");
+            ftxtEmail.setText("");
+            ftxtCEP.setText("");
+            ftxtCadUnico.setText("");
+            //Desabilitando botões
+            btnNewPatient.setEnabled(false);
+            btnEdit.setEnabled(false);
+            btnDelete.setEnabled(false);
+            btnSave.setEnabled(false);
+            btnSearch.setEnabled(false);
+            btnCancel.setEnabled(true);
+            btnOk.setEnabled(true);
+        }
     }//GEN-LAST:event_btnSearchActionPerformed
 
     /**
