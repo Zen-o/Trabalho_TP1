@@ -24,19 +24,21 @@ public class Laboratorio extends javax.swing.JFrame {
      */
     public Laboratorio() {
         initComponents();
+        Paciente paciente;
         ArrayList<Paciente> pacientes = Dados.getListaPacientes();
-        CarregarTabela(pacientes.get(-1));
-        
+        //CarregarTabela(pacientes.get(pacientes.size()-1));
+        if(pacientes.size() > 1){CarregarTabela(pacientes.get(pacientes.size()-1));}
+        else{CarregarTabela(pacientes.get(0));}
         
     }
     
     public void CarregarTabela(Paciente paciente){
-        jTable1.setValueAt(paciente.getNome(), 1, 1);
-        jTable1.setValueAt(paciente.getDataNacimento(), 2, 1);
-        jTable1.setValueAt(paciente.getCpf(), 3, 1);
-        jTable1.setValueAt(paciente.getEmail(), 4, 1);
-        jTable1.setValueAt(paciente.getTelefone(), 5, 1);
-        jTable1.setValueAt(paciente.getCadastroUnico(), 6, 1);
+        jTable1.setValueAt(paciente.getNome(), 0, 1);
+        jTable1.setValueAt(paciente.getDataNacimento(), 1, 1);
+        jTable1.setValueAt(paciente.getCpf(), 2, 1);
+        jTable1.setValueAt(paciente.getEmail(), 3, 1);
+        jTable1.setValueAt(paciente.getTelefone(), 4, 1);
+        jTable1.setValueAt(paciente.getCadastroUnico(), 5, 1);
     }
     /**
      * This method is called from within the constructor to initialize the form.

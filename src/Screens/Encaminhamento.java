@@ -123,8 +123,12 @@ public class Encaminhamento extends javax.swing.JFrame {
         // TODO add your handling code here:
         ArrayList<Paciente> pacientes = Dados.getListaPacientes();
         ArrayList<entities.Medico> medicos = Dados.getListaMedicos();
-            entities.Medico medico = medicos.get(-1);
-            Paciente paciente = pacientes.get(-1);
+        entities.Medico medico;
+        Paciente paciente;
+    if(medicos.size() > 1){medico = medicos.get(medicos.size()-1);}
+    else{ medico = medicos.get(0);}
+    if(pacientes.size() > 1){paciente = pacientes.get(pacientes.size()-1);}
+    else{paciente = pacientes.get(0);}
        
       String e = "";
         try {
