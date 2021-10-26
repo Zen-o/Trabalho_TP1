@@ -24,7 +24,7 @@ public class Dados {
         Dados.listaPacientes.add(paciente);
     }
 
-    public static ArrayList<Recepcionista> getListaRecepcionistas() {
+    public static ArrayList<Recepcionista> getListaRecepcionistas() { 
         return listaRecepcionistas;
     }
 

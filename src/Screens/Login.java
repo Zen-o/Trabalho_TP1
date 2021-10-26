@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Screens;
-
+import entities.*;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,6 +19,7 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         //this.setExtendedState(MAXIMIZED_BOTH);
+        Dados dados = new Dados();
     }
 
     /**

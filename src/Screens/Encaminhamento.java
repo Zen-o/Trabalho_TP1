@@ -120,7 +120,7 @@ public class Encaminhamento extends javax.swing.JFrame {
         // TODO add your handling code here:
             entities.Medico medico = new entities.Medico();
        
-       String e = "";
+      String e = "";
         try {
       FileWriter escritor = new FileWriter("Encaminhamento.txt");
       e = e.concat(String.format("Encaminhamento:\n\n\n\n\n\n"));
