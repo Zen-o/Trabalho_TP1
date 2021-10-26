@@ -22,7 +22,8 @@ public class Login extends javax.swing.JFrame {
         //this.setExtendedState(MAXIMIZED_BOTH);
         Dados dados = new Dados();
         ArrayList<Paciente> pacientes = Dados.getListaPacientes();
-        
+        Paciente paciente = new Paciente("Anakin Skywalker", "08101999", "anakinlovespadme@mail.com", "06022234590", "7213289", "5561987654325", "12343265891");
+        Dados.adicionarPaciente(paciente);
     }
 
     /**
