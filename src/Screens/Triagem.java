@@ -22,6 +22,7 @@ public class Triagem extends javax.swing.JFrame {
      */
     public Triagem() {
         initComponents();
+        CarregarTabelaPacientes();
         this.setExtendedState(MAXIMIZED_BOTH);
         
         ArrayList<Paciente> pacientes = Dados.getListaPacientes();

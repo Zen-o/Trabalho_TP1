@@ -48,12 +48,12 @@ public class Medico extends javax.swing.JFrame {
         //CarregarTabela(pacientes.get(-1));
    }
     public void CarregarTabela(Paciente paciente){
-        jTable1.setValueAt(paciente.getNome(), 1, 1);
-        jTable1.setValueAt(paciente.getDataNacimento(), 2, 1);
-        jTable1.setValueAt(paciente.getCpf(), 3, 1);
-        jTable1.setValueAt(paciente.getEmail(), 4, 1);
-        jTable1.setValueAt(paciente.getTelefone(), 5, 1);
-        jTable1.setValueAt(paciente.getCadastroUnico(), 6, 1);
+        tblDadosPessoais.setValueAt(paciente.getNome(), 1, 1);
+        tblDadosPessoais.setValueAt(paciente.getDataNacimento(), 2, 1);
+        tblDadosPessoais.setValueAt(paciente.getCpf(), 3, 1);
+        tblDadosPessoais.setValueAt(paciente.getEmail(), 4, 1);
+        tblDadosPessoais.setValueAt(paciente.getTelefone(), 5, 1);
+        tblDadosPessoais.setValueAt(paciente.getCadastroUnico(), 6, 1);
 
     }
     /**
@@ -73,7 +73,7 @@ public class Medico extends javax.swing.JFrame {
         tblDados = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblDadosPessoais = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setIconImage(new javax.swing.ImageIcon(getClass().getResource("/icons/icon_window.png")).getImage());
@@ -129,7 +129,7 @@ public class Medico extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Dados pessoais"));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblDadosPessoais.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Nome:", null},
                 {"Idade:", null},
@@ -150,7 +150,7 @@ public class Medico extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(tblDadosPessoais);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -266,7 +266,7 @@ public class Medico extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable tblDados;
+    private javax.swing.JTable tblDadosPessoais;
     // End of variables declaration//GEN-END:variables
 }

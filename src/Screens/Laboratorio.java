@@ -26,6 +26,8 @@ public class Laboratorio extends javax.swing.JFrame {
         initComponents();
         ArrayList<Paciente> pacientes = Dados.getListaPacientes();
         CarregarTabela(pacientes.get(-1));
+        
+        
     }
     
     public void CarregarTabela(Paciente paciente){
