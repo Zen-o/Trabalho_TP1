@@ -6,6 +6,9 @@ public class Medico extends Pessoa {
 	private String crn;
 	ArrayList<Pessoa> listaPaciente = new ArrayList<>();
 
+    public Medico() {
+    }
+
     public Medico(String nome, String dataNacimento, String email, String cpf, String cep, String telefone,String crn) {
         super(nome, dataNacimento, email, cpf, cep, telefone);
         this.crn = crn;

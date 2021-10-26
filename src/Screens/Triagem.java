@@ -33,6 +33,7 @@ public class Triagem extends javax.swing.JFrame {
         btnSave.setEnabled(false);
         btnSearch.setEnabled(true);
         btnCancel.setEnabled(false);
+        btnOk.setEnabled(false);
         
         //Desabilitar caixas de texto
         txtName.setEnabled(false);
@@ -97,6 +98,7 @@ public class Triagem extends javax.swing.JFrame {
         ftxtCPF = new javax.swing.JFormattedTextField();
         ftxtCadUnico = new javax.swing.JFormattedTextField();
         btnCancel = new javax.swing.JButton();
+        btnOk = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Triagem");
@@ -110,6 +112,11 @@ public class Triagem extends javax.swing.JFrame {
         });
 
         btnDelete.setText("Excluir");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         btnEdit.setText("Editar");
         btnEdit.addActionListener(new java.awt.event.ActionListener() {
@@ -158,6 +165,11 @@ public class Triagem extends javax.swing.JFrame {
         }
 
         btnSearch.setText("Pesquisar");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchActionPerformed(evt);
+            }
+        });
 
         lblName.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblName.setText("Nome:");
@@ -223,6 +235,8 @@ public class Triagem extends javax.swing.JFrame {
             }
         });
 
+        btnOk.setText("Ok");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -252,10 +266,6 @@ public class Triagem extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(lblCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(ftxtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
                                         .addComponent(btnNewPatient, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(btnSave, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -274,7 +284,13 @@ public class Triagem extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(btnSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lblCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ftxtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnOk, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -288,7 +304,8 @@ public class Triagem extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblCPF)
-                    .addComponent(ftxtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ftxtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnOk))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
@@ -334,6 +351,7 @@ public class Triagem extends javax.swing.JFrame {
         btnEdit.setEnabled(true);
         btnDelete.setEnabled(true);
         btnSearch.setEnabled(true);
+        btnOk.setEnabled(false);
         
         //Habilitando campos de texto
         txtName.setEnabled(true);
@@ -406,6 +424,7 @@ public class Triagem extends javax.swing.JFrame {
             btnSave.setEnabled(false);
             btnSearch.setEnabled(true);
             btnCancel.setEnabled(false);
+            btnOk.setEnabled(false);
         
             //Desabiliatar caixas de texto
             txtName.setEnabled(false);
@@ -431,6 +450,7 @@ public class Triagem extends javax.swing.JFrame {
         btnSave.setEnabled(false);
         btnSearch.setEnabled(true);
         btnCancel.setEnabled(false);
+        btnOk.setEnabled(false);
         
         //Habiliatar caixas de texto
         txtName.setEnabled(false);
@@ -460,6 +480,7 @@ public class Triagem extends javax.swing.JFrame {
         btnSave.setEnabled(true);
         btnSearch.setEnabled(false);
         btnCancel.setEnabled(true);
+        btnOk.setEnabled(false);
         
         //Desabilitar caixas de texto
         txtName.setEnabled(true);
@@ -493,6 +514,7 @@ public class Triagem extends javax.swing.JFrame {
             btnSave.setEnabled(false);
             btnSearch.setEnabled(true);
             btnCancel.setEnabled(false);
+            btnOk.setEnabled(false);
         
             //Desabilitar caixas de texto
             txtName.setEnabled(false);
@@ -504,6 +526,61 @@ public class Triagem extends javax.swing.JFrame {
             ftxtCadUnico.setEnabled(false);
         }
     }//GEN-LAST:event_tblDadosMouseClicked
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        int indice = tblDados.getSelectedRow();
+        if(indice >= 0 && indice < Dados.getListaPacientes().size()){
+            Dados.getListaPacientes().remove(indice);
+            CarregarTabelaPacientes();
+        
+        //Setando os campos como string vazia
+        txtName.setText("");
+        ftxtCPF.setText("");
+        ftxtBirthDate.setText("");
+        ftxtTelefone.setText("");
+        ftxtEmail.setText("");
+        ftxtCEP.setText("");
+        ftxtCadUnico.setText("");
+        //Desabilitar caixas de texto
+        txtName.setEnabled(false);
+        ftxtCPF.setEnabled(false);
+        ftxtBirthDate.setEnabled(false);
+        ftxtTelefone.setEnabled(false);
+        ftxtEmail.setEnabled(false);
+        ftxtCEP.setEnabled(false);
+        ftxtCadUnico.setEnabled(false);
+        // Desabilitando botões
+        btnNewPatient.setEnabled(true);
+        btnEdit.setEnabled(false);
+        btnDelete.setEnabled(false);
+        btnSave.setEnabled(false);
+        btnSearch.setEnabled(true);
+        btnCancel.setEnabled(false);
+        btnOk.setEnabled(false);
+        
+        }
+        
+    }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        //Setando os campos como string vazia
+        txtName.setText("");
+        ftxtCPF.setText("");
+        ftxtBirthDate.setText("");
+        ftxtTelefone.setText("");
+        ftxtEmail.setText("");
+        ftxtCEP.setText("");
+        ftxtCadUnico.setText("");
+        //Desabilitando botões
+        btnNewPatient.setEnabled(false);
+        btnEdit.setEnabled(false);
+        btnDelete.setEnabled(false);
+        btnSave.setEnabled(false);
+        btnSearch.setEnabled(false);
+        btnCancel.setEnabled(true);
+        btnOk.setEnabled(true);
+        
+    }//GEN-LAST:event_btnSearchActionPerformed
 
     /**
      * @param args the command line arguments
@@ -545,6 +622,7 @@ public class Triagem extends javax.swing.JFrame {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnEdit;
     private javax.swing.JButton btnNewPatient;
+    private javax.swing.JButton btnOk;
     private javax.swing.JButton btnSave;
     private javax.swing.JButton btnSearch;
     private javax.swing.JFormattedTextField ftxtBirthDate;
