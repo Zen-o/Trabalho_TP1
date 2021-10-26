@@ -5,6 +5,7 @@
  */
 package Screens;
 
+
 /**
  *
  * @author Bismarck
@@ -15,10 +16,11 @@ public class Medico extends javax.swing.JFrame {
      * Creates new form Medico
      */
     public Medico() {
+       
         initComponents();
-        this.setExtendedState(MAXIMIZED_BOTH);    
-    }
-
+        this.setExtendedState(MAXIMIZED_BOTH);
+   }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
