@@ -37,7 +37,7 @@ public class Dados {
     }
 
     public static ArrayList<Medico> getListaMedicos() {
-        if (listaMedicos == null)
+        if (listaMedicos  == null)
             listaMedicos = new ArrayList<Medico>();
         return listaMedicos;
     }
