@@ -103,17 +103,17 @@ public class Login extends javax.swing.JFrame {
 
     private void btnEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEntrarActionPerformed
         // Verificando os Logins
-        if(jFmdTxtEmail.getText().equals("user_med") && fldSenha.getText().equals("12345Med")){
+        if(jFmdTxtEmail.getText().equals("med@uol.br") && fldSenha.getText().equals("med")){
             //Verificando login medico
             new Medico().setVisible(true);
             this.setVisible(false);
         }
-        if(jFmdTxtEmail.getText().equals("user_tri") && fldSenha.getText().equals("12345Tri")){
+        if(jFmdTxtEmail.getText().equals("tri@uol.br") && fldSenha.getText().equals("tri")){
             //Verificando login triagem
             new Triagem().setVisible(true);
             this.setVisible(false);
         }
-        if(jFmdTxtEmail.getText().equals("user_lab") && fldSenha.getText().equals("12345Lab")){
+        if(jFmdTxtEmail.getText().equals("lab@uol.br") && fldSenha.getText().equals("lab")){
             //Verificando login laboratorio
             new Laboratorio().setVisible(true);
             this.setVisible(false);
