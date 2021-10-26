@@ -5,6 +5,10 @@
  */
 package Screens;
 
+import entities.Dados;
+import entities.Paciente;
+import java.util.ArrayList;
+
 
 /**
  *
@@ -19,8 +23,18 @@ public class Medico extends javax.swing.JFrame {
        
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
+        
+        ArrayList<Paciente> pacientes = Dados.getListaPacientes();
+        CarregarTabela(pacientes.get(-1));
    }
-    
+    public void CarregarTabela(Paciente paciente){
+        jTable1.setValueAt(paciente.getNome(), 1, 1);
+        jTable1.setValueAt(paciente.getDataNacimento(), 2, 1);
+        jTable1.setValueAt(paciente.getCpf(), 3, 1);
+        jTable1.setValueAt(paciente.getEmail(), 4, 1);
+        jTable1.setValueAt(paciente.getTelefone(), 5, 1);
+        jTable1.setValueAt(paciente.getCadastroUnico(), 6, 1);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
